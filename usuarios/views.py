@@ -108,7 +108,7 @@ def excluir_verificacao(request, pk):
     if request.method == "GET":
         if request.user.is_authenticated:
             lista_notas = Nota.objects.get(pk=pk)
-            dicionario_notas = {'lista_notas': lista_notas}
+            dicionario_notas = {'lista_notas':lista_notas}
             return render(request, 'usuarios/excluir.html', dicionario_notas)
         else:
             return HttpResponse("Faça o login para acessar!")
